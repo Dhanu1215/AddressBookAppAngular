@@ -1,0 +1,67 @@
+<div>
+
+    <body>
+        <header class="header-container">
+            <div class="logo-content">
+                <img src="../assets/logo.png">
+                <div>
+                    <span class="header-text">ADDRESS</span> <br>
+                    <span class="headet-text-book">BOOK</span>
+                </div>
+            </div>
+        </header>
+        <hr>
+        <div class='main-content'>
+            <div class='main'>
+                <h1 class='form-head'>Address Book Details
+                    <button class='adduser' (click)="addEmployees()">+Add</button>
+                </h1>
+            </div>
+        </div>
+        <br>
+        <div class='table-content'>
+            <table class="table">
+                <thead class='head'>
+                    <tr class='head-content'>
+                        <th class='pro' scope="col">Sr.No</th>
+                        <th class='pro' scope="col">Profile</th>
+                        <th class='pro' scope="col">Firstname</th>
+                        <th class='pro' scope="col">Lastname</th>
+                        <th class='pro' scope="col">Gender</th>
+                        <th class='pro' scope="col">Phone-No</th>
+                        <th class='pro' scope="col">Email</th>
+                        <th class='pro' scope="col">City</th>
+                        <th class='pro' scope="col">State</th>
+                        <th class='pro' scope="col">Country</th>
+                        <th class='pro' scope="col">Address</th>
+                        <th class='action' scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class='content' *ngFor="let contacts of contact.data">
+                        <th scope="row">{{contacts.personId}}</th>
+                        <td>
+                            <img class="profile" src="../assets/Ellipse -3.png" *ngIf="contacts.profilePic==1" alt="">
+                            <img class="profile" src="../assets/Ellipse -2.png" *ngIf="contacts.profilePic==2" alt="">
+                            <img class="profile" src="../assets/Ellipse -1.png" *ngIf="contacts.profilePic==3" alt="">
+                            <img class="profile" src="../assets/Ellipse-4.png" *ngIf="contacts.profilePic==4" alt="">
+                        </td>
+                        <td class='pro'>{{contacts.firstName}}</td>
+                        <td class='pro'>{{contacts.lastName}}</td>
+                        <td class='pro'>{{contacts.gender}}</td>
+                        <td class='pro'>{{contacts.phoneNum}}</td>
+                        <td class='pro'>{{contacts.email}}</td>
+                        <td class='pro'>{{contacts.city}}</td>
+                        <td class='pro'>{{contacts.state}}</td>
+                        <td class='pro'>{{contacts.country}}</td>
+                        <td class='pro'>{{contacts.address}}</td>
+                        <td class='pro'>
+                            <img class='edit' (click)="edit(contacts.personId)" src='./assets/edit.png' />
+                            <img class='delete' (click)="remove(contacts.personId)" src='./assets/delete.png' />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</div>
